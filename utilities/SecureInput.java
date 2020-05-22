@@ -1,3 +1,5 @@
+package utilities;
+
 import java.util.Scanner;
 
 public class SecureInput {

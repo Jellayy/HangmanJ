@@ -1,4 +1,6 @@
 import game.*;
+import utilities.SecureInput;
+
 public class HangmanRewritten {
 
     //Main Menu
