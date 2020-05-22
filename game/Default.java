@@ -1,5 +1,6 @@
 package game;
 
+import game.utilities.HangmanEngine;
 import game.utilities.SecureInput;
 
 public class Default {

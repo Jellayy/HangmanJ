@@ -1,4 +1,4 @@
-package game;
+package game.utilities;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -98,7 +98,7 @@ public class HangmanEngine {
         String word = "";
         try {
             //Initializes file reader
-            FileReader fr = new FileReader("game/hangmanWords.txt");
+            FileReader fr = new FileReader("game/utilities/hangmanWords.txt");
             BufferedReader inFile = new BufferedReader(fr);
 
             //writes file contents to array
