@@ -1,5 +1,5 @@
-import game.*;
-import utilities.SecureInput;
+import game.Default;
+import game.utilities.SecureInput;
 
 public class HangmanRewritten {
 
