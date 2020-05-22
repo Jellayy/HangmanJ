@@ -1,4 +1,4 @@
-import game.Default;
+import game.Classic;
 import game.utilities.SecureInput;
 
 public class HangmanRewritten {
@@ -20,7 +20,7 @@ public class HangmanRewritten {
             switch (input) {
                 case "P":
                     System.out.println("Play Game...");
-                    Default.runGame();
+                    Classic.runGame();
                     break;
                 case "M":
                     System.out.println("Manage Words...");

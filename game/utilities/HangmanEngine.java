@@ -14,6 +14,7 @@ public class HangmanEngine {
     private String[] correctGuesses;
     private String incorrectGuesses = "";
     private String allGuesses = "";
+    private String word = "";
 
     //Constructor
     public HangmanEngine() {
@@ -21,6 +22,7 @@ public class HangmanEngine {
         wordLength = arrayWord.length;
         guesses = 0;
         correctGuesses = arrayHangmanFormatter(wordLength);
+        convertArrayedWord();
     }
 
     //Accessors
@@ -71,7 +73,7 @@ public class HangmanEngine {
         }
     }
 
-    public boolean isGameOver() {
+    public boolean isGuessed() {
         boolean gameOver = true;
         for (int i = 0; i < correctGuesses.length; i++) {
             if (correctGuesses[i].equals("_")) {
@@ -82,12 +84,25 @@ public class HangmanEngine {
     }
 
     public void printPostGameState() {
-        for (int i = 0; i < wordLength; i++) {
-            System.out.print(correctGuesses[i] + " ");
+        if(isGuessed()) {
+            System.out.println("YOU WIN!");
+            for (int i = 0; i < wordLength; i++) {
+                System.out.print(correctGuesses[i] + " ");
+            }
+            System.out.print("   ");
+            System.out.print("Used letters: {" + incorrectGuesses + "}\n");
+            System.out.print("You guessed it in " + guesses + " tries.");
         }
-        System.out.print("   ");
-        System.out.print("Used letters: {" + incorrectGuesses + "}\n");
-        System.out.print("You guessed it in " + guesses + " tries.");
+        else {
+            System.out.println("Better luck next time");
+            for (int i = 0; i < wordLength; i++) {
+                System.out.print(correctGuesses[i] + " ");
+            }
+            System.out.print("   ");
+            System.out.print("Used letters: {" + incorrectGuesses + "}\n");
+            System.out.println("The word was: " + word);
+            System.out.print("You used " + guesses + " tries.");
+        }
     }
 
     //Private Methods
@@ -148,8 +163,12 @@ public class HangmanEngine {
                 guessingArray[i] = replace;
             }
         }
-
         return guessingArray;
+    }
+    private void convertArrayedWord() {
+        for (int i = 0; i < wordLength; i++) {
+            word = word + arrayWord[i];
+        }
     }
 
 }

@@ -3,12 +3,12 @@ package game;
 import game.utilities.HangmanEngine;
 import game.utilities.SecureInput;
 
-public class Default {
-    public static void runGame(){
+public class Classic {
+    public static void runGame() {
 
         //Show Start Screen
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        System.out.println("Default Game:");
+        System.out.println("Classic Game:");
 
         //Initialize Engine
         HangmanEngine game = new HangmanEngine();
@@ -16,15 +16,24 @@ public class Default {
         //Start Game
         String guess = "";
         boolean gameOver = false;
+        int maxGuesses = 6;
         do {
 
             game.printGameState();
+            System.out.println("Remaining guesses: " + maxGuesses);
 
             System.out.print("Enter a letter: ");
             guess = SecureInput.secureStringChar();
-            game.processGuess(guess);
+            if(!game.processGuess(guess)) {
+                maxGuesses--;
+            }
 
-            gameOver = game.isGameOver();
+            if (maxGuesses == 0) {
+                gameOver = true;
+            }
+            if (game.isGuessed()) {
+                gameOver = true;
+            }
 
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
