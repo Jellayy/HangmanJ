@@ -2,6 +2,7 @@ package game;
 
 import game.utilities.HangmanEngine;
 import game.utilities.SecureInput;
+import game.utilities.HangmanGraphicsEngine;
 
 public class Classic {
     public static void runGame() {
@@ -19,6 +20,7 @@ public class Classic {
         int maxGuesses = 6;
         do {
 
+            HangmanGraphicsEngine.drawHangman(maxGuesses);
             game.printGameState();
             System.out.println("Remaining guesses: " + maxGuesses);
 
@@ -39,6 +41,7 @@ public class Classic {
 
         } while(!gameOver);
 
+        HangmanGraphicsEngine.drawHangman(maxGuesses);
         game.printPostGameState();
 
     }
