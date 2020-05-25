@@ -43,6 +43,8 @@ public class Classic {
 
         HangmanGraphicsEngine.drawHangman(maxGuesses);
         game.printPostGameState();
+        System.out.println("\nEnter any key to return to menu: ");
+        String returnToMenu = SecureInput.secureString();
 
     }
 }

@@ -6,15 +6,15 @@ public class HangmanRewritten {
     //Main Menu
     public static void main(String[] args) {
         boolean closeMenu = false;
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        System.out.println("=================================");
-        System.out.println("   HangmanJ Rewrite: Main Menu   ");
-        System.out.println("---------------------------------");
-        System.out.println("          P - Play Game          ");
-        System.out.println("         M - Manage Words        ");
-        System.out.println("            E - Exit             ");
-        System.out.println("=================================");
         do {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("=================================");
+            System.out.println("   HangmanJ Rewrite: Main Menu   ");
+            System.out.println("---------------------------------");
+            System.out.println("          P - Play Game          ");
+            System.out.println("         M - Manage Words        ");
+            System.out.println("            E - Exit             ");
+            System.out.println("=================================");
             System.out.print("Choose: ");
             String input = SecureInput.secureStringChar();
             switch (input) {
