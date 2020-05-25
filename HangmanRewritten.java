@@ -1,4 +1,8 @@
+// Import game modes here:
 import game.Classic;
+import game.Unlimited;
+
+//Other imports
 import game.utilities.SecureInput;
 import game.utilities.WordManager;
 
@@ -20,8 +24,7 @@ public class HangmanRewritten {
             String input = SecureInput.secureStringChar();
             switch (input) {
                 case "P":
-                    System.out.println("Play Game...");
-                    Classic.runGame();
+                    gameModeMenu();
                     break;
                 case "M":
                     manageWordsMenu();
@@ -72,5 +75,39 @@ public class HangmanRewritten {
             }
         } while(!closeMenu);
     }
+
+    private static void gameModeMenu() {
+        boolean closeMenu = false;
+        do {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("=====================================");
+            System.out.println("     HangmanJ Rewrite: Game Modes    ");
+            System.out.println("-------------------------------------");
+            System.out.println("        1 - Classic (6 Guess)        ");
+            System.out.println("        2 - Classic (12 Guess)       ");
+            System.out.println("            3 - Unlimited            ");
+            System.out.println("              0 - Back               ");
+            System.out.println("=====================================");
+            System.out.print("Choose: ");
+            int input = SecureInput.secureInt();
+            switch (input) {
+                case 1:
+                    Classic.runGame();
+                    closeMenu = true;
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    Unlimited.runGame();
+                    break;
+                case 0:
+                    closeMenu = true;
+                    break;
+                default:
+                    System.out.println("Try again");
+            }
+        } while(!closeMenu);
+    }
+
 
 }

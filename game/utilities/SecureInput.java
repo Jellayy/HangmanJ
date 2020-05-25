@@ -18,7 +18,6 @@ public class SecureInput {
                 input.nextLine();
             }
         } while (!complete);
-        input.close();
         return userInput;
     }
 
