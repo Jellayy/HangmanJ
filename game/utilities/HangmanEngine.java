@@ -134,29 +134,28 @@ public class HangmanEngine {
     //Private Methods
     private static String[] importWord() {
         //Imports 10 words from 'hangmanWords.txt' and chooses one to import to program
-        String[] allWords = new String[973];
+        ArrayList<String> allWordsList = new ArrayList<String>();
         String line = "";
         String word = "";
         try {
             //Initializes file reader
             FileReader fr = new FileReader("game/utilities/hangmanWords.txt");
-            BufferedReader inFile = new BufferedReader(fr);
+            BufferedReader br = new BufferedReader(fr);
 
-            //writes file contents to array
-            for (int i = 0; i < 973; i++) {
-                line = inFile.readLine();
-                allWords[i] = line;
+            //Writes words from file to arraylist
+            while((line = br.readLine()) != null) {
+                allWordsList.add(line);
             }
 
-            inFile.close();
+            br.close();
         }
         catch (IOException ioe) {
             System.out.println("'hangmanWords.txt' Missing");
         }
         //Chooses random word from array and converts to uppercase
         Random rand = new Random();
-        int randomNum = rand.nextInt(971 + 1) + 1;
-        word = allWords[randomNum];
+        int randomNum = rand.nextInt(allWordsList.size()) + 1;
+        word = allWordsList.get(randomNum);
         word = word.toUpperCase();
         //Converts chosen word to an array
         String[] arrayedWord = new String[word.length()];
