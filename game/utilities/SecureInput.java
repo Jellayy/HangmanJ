@@ -22,6 +22,30 @@ public class SecureInput {
         return userInput;
     }
 
+    //Takes only single word input
+    public static String secureString() {
+        Scanner input = new Scanner(System.in);
+        String word = "";
+        boolean complete = false;
+        do {
+            if(input.hasNext()) {
+                word = input.next();
+                input.nextLine();
+                if(stringCharacterCheck(word)) {
+                    complete = true;
+                }
+                else {
+                    System.out.println("Please enter only characters");
+                }
+            }
+            else {
+                System.out.println("Invalid input");
+            }
+        } while(!complete);
+        word = word.toUpperCase();
+        return word;
+    }
+
     //Takes single character input as string
     public static String secureStringChar() {
         Scanner input = new Scanner(System.in);

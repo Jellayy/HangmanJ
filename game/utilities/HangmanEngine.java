@@ -3,6 +3,7 @@ package game.utilities;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -14,6 +15,7 @@ public class HangmanEngine {
     private String[] correctGuesses;
     private String incorrectGuesses = "";
     private String allGuesses = "";
+    private ArrayList<String> allWordGuesses;
     private String word = "";
 
     //Constructor
@@ -23,6 +25,7 @@ public class HangmanEngine {
         guesses = 0;
         correctGuesses = arrayHangmanFormatter(wordLength);
         convertArrayedWord();
+        this.allWordGuesses = new ArrayList<String>();
     }
 
     //Accessors
@@ -52,23 +55,46 @@ public class HangmanEngine {
     }
 
     public boolean processGuess(String guess) {
-        boolean containsGuess = arraySearcher(arrayWord, guess);
-        if(allGuesses.contains(guess)) {
-            System.out.println("You have already guessed this letter.");
-            return false;
-        }
-        else {
-            if(containsGuess) {
-                correctGuesses = arrayReplacer(arrayWord, correctGuesses, guess);
-                guesses++;
-                allGuesses = allGuesses + guess;
+        if(guess.length() == 1) {
+            boolean containsGuess = arraySearcher(arrayWord, guess);
+            if (allGuesses.contains(guess)) {
+                System.out.println("You have already guessed this letter.");
                 return true;
             }
             else {
-                incorrectGuesses = incorrectGuesses + guess;
-                guesses++;
-                allGuesses = allGuesses + guess;
-                return false;
+                if (containsGuess) {
+                    correctGuesses = arrayReplacer(arrayWord, correctGuesses, guess);
+                    guesses++;
+                    allGuesses = allGuesses + guess;
+                    return true;
+                } else {
+                    incorrectGuesses = incorrectGuesses + guess;
+                    guesses++;
+                    allGuesses = allGuesses + guess;
+                    return false;
+                }
+            }
+        }
+        else {
+            if(allWordGuesses.contains(guess)) {
+                System.out.println("You have already guessed this word.");
+                return true;
+            }
+            else {
+                if(word.equals(guess)) {
+                    for(int i = 0; i < arrayWord.length; i++) {
+                        correctGuesses = arrayReplacer(arrayWord, correctGuesses, arrayWord[i]);
+                    }
+                    guesses++;
+                    allWordGuesses.add(guess);
+                    return true;
+                }
+                else {
+                    incorrectGuesses = incorrectGuesses + "\"" + guess + "\"";
+                    guesses++;
+                    allWordGuesses.add(guess);
+                    return false;
+                }
             }
         }
     }
@@ -99,7 +125,7 @@ public class HangmanEngine {
                 System.out.print(correctGuesses[i] + " ");
             }
             System.out.print("   ");
-            System.out.print("Used letters: {" + incorrectGuesses + "}\n");
+            System.out.print("Used guesses: {" + incorrectGuesses + "}\n");
             System.out.println("The word was: " + word);
             System.out.print("You used " + guesses + " tries.");
         }

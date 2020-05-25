@@ -24,8 +24,8 @@ public class Classic {
             game.printGameState();
             System.out.println("Remaining guesses: " + maxGuesses);
 
-            System.out.print("Enter a letter: ");
-            guess = SecureInput.secureStringChar();
+            System.out.print("Enter your guess: ");
+            guess = SecureInput.secureString();
             if(!game.processGuess(guess)) {
                 maxGuesses--;
             }
