@@ -44,6 +44,15 @@ public class HangmanEngine {
     public String getIncorrectGuesses() {
         return incorrectGuesses;
     }
+    public String getAllGuesses() {
+        return allGuesses;
+    }
+    public ArrayList<String> getAllWordGuesses() {
+        return allWordGuesses;
+    }
+    public String getWord() {
+        return word;
+    }
 
     //Default Methods
     public void printGameState() {
