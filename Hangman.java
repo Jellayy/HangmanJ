@@ -9,7 +9,7 @@ import game.TwelveGuess;
 import game.utilities.SecureInput;
 import game.utilities.WordManager;
 
-public class HangmanRewritten {
+public class Hangman {
 
     //Main Menu
     public static void main(String[] args) {
