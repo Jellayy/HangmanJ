@@ -1,4 +1,6 @@
-// Import game modes here:
+//Import Game Modes
+//CUSTOM MODE STEP 1: IMPORT HERE
+//STEP 2 @ LINE ~94
 import game.Classic;
 import game.Unlimited;
 import game.TwelveGuess;
@@ -15,7 +17,7 @@ public class HangmanRewritten {
         do {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("=====================================");
-            System.out.println("     HangmanJ Rewrite: Main Menu     ");
+            System.out.println("       HangmanJ v1.0: Main Menu      ");
             System.out.println("-------------------------------------");
             System.out.println("            P - Play Game            ");
             System.out.println("           M - Manage Words          ");
@@ -41,12 +43,13 @@ public class HangmanRewritten {
         } while(!closeMenu);
     }
 
+    //Word Management Menu
     private static void manageWordsMenu() {
         boolean closeMenu = false;
         do {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("=====================================");
-            System.out.println("    HangmanJ Rewrite: Manage Words   ");
+            System.out.println("     HangmanJ v1.0:  Manage Words    ");
             System.out.println("-------------------------------------");
             System.out.println("     Words can also be edited in:    ");
             System.out.println("   game/utilities/hangmanWords.txt   ");
@@ -77,16 +80,19 @@ public class HangmanRewritten {
         } while(!closeMenu);
     }
 
+    //Game Mode Selection Menu
     private static void gameModeMenu() {
         boolean closeMenu = false;
         do {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("=====================================");
-            System.out.println("     HangmanJ Rewrite: Game Modes    ");
+            System.out.println("      HangmanJ v1.0:  Game Modes     ");
             System.out.println("-------------------------------------");
             System.out.println("        1 - Classic (6 Guess)        ");
             System.out.println("        2 - Classic (12 Guess)       ");
             System.out.println("            3 - Unlimited            ");
+                                //STEP 2: LIST ADDITIONAL MODES HERE
+                                //STEP 3 @ LINE ~113
             System.out.println("              0 - Back               ");
             System.out.println("=====================================");
             System.out.print("Choose: ");
@@ -104,6 +110,7 @@ public class HangmanRewritten {
                     Unlimited.runGame();
                     closeMenu = true;
                     break;
+                //STEP 3: ADD ADDITIONAL CASES FOR GAME MODES BELOW
                 case 0:
                     closeMenu = true;
                     break;
@@ -112,6 +119,4 @@ public class HangmanRewritten {
             }
         } while(!closeMenu);
     }
-
-
 }
