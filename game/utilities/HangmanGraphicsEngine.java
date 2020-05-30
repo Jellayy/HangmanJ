@@ -78,11 +78,27 @@ public class HangmanGraphicsEngine {
             System.out.println("        ");
             System.out.println("        ");
             System.out.println("        ");
+            System.out.println("       |");
+            System.out.println("       |");
+            System.out.println("_______|");
+        }
+        else if(value == 10) {
+            System.out.println("        ");
+            System.out.println("        ");
+            System.out.println("        ");
+            System.out.println("        ");
+            System.out.println("        ");
+            System.out.println("_______|");
+        }
+        else if(value == 11) {
+            System.out.println("        ");
+            System.out.println("        ");
+            System.out.println("        ");
             System.out.println("        ");
             System.out.println("        ");
             System.out.println("_______ ");
         }
-        else if(value == 10) {
+        else {
             System.out.println("        ");
             System.out.println("        ");
             System.out.println("        ");

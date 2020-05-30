@@ -1,6 +1,7 @@
 // Import game modes here:
 import game.Classic;
 import game.Unlimited;
+import game.TwelveGuess;
 
 //Other imports
 import game.utilities.SecureInput;
@@ -96,9 +97,12 @@ public class HangmanRewritten {
                     closeMenu = true;
                     break;
                 case 2:
+                    TwelveGuess.runGame();
+                    closeMenu = true;
                     break;
                 case 3:
                     Unlimited.runGame();
+                    closeMenu = true;
                     break;
                 case 0:
                     closeMenu = true;
