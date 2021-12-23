@@ -18,7 +18,8 @@ void manage_words_menu(){
 	do{
 		clear_terminal();
 		printf("=====================================\n");
-		printf("     HangmanJ v1.0:  Manage Words    \n");
+		printf("     HangmanJ v1.1:  Manage Words    \n");
+		printf("          Copyright Ben Jones        \n");
 		printf("-------------------------------------\n");
 		printf("     Words can also be edited in:    \n");
 		printf("   game/utilities/hangmanWords.txt   \n");
@@ -56,7 +57,8 @@ void game_mode_menu(){
 	do{
 		clear_terminal();
 		printf("=====================================\n");
-		printf("      HangmanJ v1.0:  Game Modes     \n");
+		printf("      HangmanJ v1.1:  Game Modes     \n");
+		printf("          Copyright Ben Jones        \n");
 		printf("-------------------------------------\n");
 		printf("        1 - Classic (6 Guess)        \n");
 		printf("        2 - Classic (12 Guess)       \n");
@@ -93,6 +95,7 @@ int main(int argc, char **argv){
 		clear_terminal();
 		printf("=====================================\n");
 		printf("       HangmanJ v1.1: Main Menu      \n");
+		printf("          Copyright Ben Jones        \n");
 		printf("-------------------------------------\n");
 		printf("            P - Play Game            \n");
 		printf("           M - Manage Words          \n");
